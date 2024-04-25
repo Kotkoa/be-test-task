@@ -173,3 +173,14 @@ async function uploadData(data) {
 app.listen(port, () => {
   console.log(`Running a server at http://localhost:${port}`)
 })
+
+//==========//
+// 1. How to change the code to support different file versions?
+//Ensure that each version of the file has a version identifier, possibly as part of the file name or as the first line of the file. Then, based on the version identifier, you can have different parsing logic for each version.
+//==========//
+// 2. How the import system will change if data on exchange rates disappears from the file, and it will need to be received asynchronously (via API)?
+//Use an API client to asynchronously retrieve exchange rates before processing salaries or financial data. Modify the data processing logic to use these rates once they're fetched.
+//==========//
+// 3. In the future the client may want to import files via the web interface,
+//    how can the system be modified to allow this?
+//Modify the existing endpoint or add a new one to receive files from a client-side form. The server can then process the uploaded file in the same way as the current import logic.
